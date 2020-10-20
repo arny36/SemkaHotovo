@@ -1,0 +1,14 @@
+.nav-item {
+    font-size: large;
+    font-weight: bold ;
+}
+
+
+.card-text {
+    font-style: italic;
+    font-weight: bold;
+
+}
+.btn btn-outline-success my-2 my-sm-0{
+    color: pink;
+}
