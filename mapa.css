@@ -10,10 +10,16 @@
 
 }
 
-img {
-    transform: translate(50% , 0%);
+.obrazok {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35% ;
 }
 a img {
     width: 50px;
     height: 50px;
+}
+body{
+    background-color: yellow;
 }
