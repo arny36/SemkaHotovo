@@ -9,6 +9,7 @@ body {
 .tvInfo {
     position: relative;
     font-weight: bold;
+    font-size: 1vw;
     color: aliceblue;
     box-sizing: border-box;
     width: 50%;
@@ -17,12 +18,14 @@ body {
 
 }
 .nav-item {
+
     font-size: large;
     font-weight: bold ;
 }
 
 h1 {
     color: saddlebrown;
+    font-size: 3vw;
 }
 p {
     background-color: greenyellow;
