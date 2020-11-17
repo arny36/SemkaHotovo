@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>HubariNaCestach</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
@@ -25,14 +24,14 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="main.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="main.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="galeria.html">Galéria</a>
+                <a class="nav-link" href="/../Semka%20vamz/?c=huby">Galéria</a>
 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="mapa.html" > Mapa pre Hubárov</a>
+                <a class="nav-link" href="mapa.php" >Mapa pre Hubárov</a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
@@ -43,7 +42,7 @@
 </nav>
 
 <div class="tvInfo">
-   <h1>O nás</h1>
+    <h1>O nás</h1>
     <p>Sme malá skupinka hubárov, ktorá sa rada podelí o svoje zážitky a skúsenosti s hubarením.</p>
     <p>Na stránke sa dozviete veľa zaujimavých vecí ohľadom húb, ich konzumácie a zbierania.</p>
 

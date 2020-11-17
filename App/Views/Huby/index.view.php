@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+
+<style>
+<?php
+include "galeria.css"
+
+?>
+</style>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,14 +32,14 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link " href="main.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link " href="../../../index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="galeria.html">Galéria</a>
+                <a class="nav-link" href="index.view.php">Galéria</a>
 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="mapa.html" > Mapa pre Hubárov</a>
+                <a class="nav-link" href="../../../mapa.php" > Mapa pre Hubárov</a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
@@ -41,60 +49,39 @@
     </div>
 </nav>
 
+<a href="?c=huby&a=pridaj" class="btn btn-dark">Pridaj</a>
 
 
-
+<?php /** @var \App\Models\HubyObsah[] $data */
+foreach ($data as $hubyObsah) { ?>
 <div class="album py-5 bg-light">
     <div class="container">
 
         <div class="row">
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
-                    <img src="https://img.blesk.cz/img/1/full/5989284_bedla-cervenajici-chlorophyllum-rachodes-v0.jpg?v=0" alt ="Bedla" >
+                    <img src= <?= $hubyObsah->getObrazok()  ?> alt ="Bedla" >
                     <div class="card-body">
-                        <p class="card-text">Bedľa vysoká.</p>
+                        <p class="card-text"><?= $hubyObsah->getNazov() ?></p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
+                            </div>
+                            <small class="text-muted"><?=$hubyObsah->getJedlost()?></small>
+                            <div>
+                                <h1><?=$hubyObsah->getPopis()?></h1>
 
                             </div>
-                            <small class="text-muted">jedlá huba</small>
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <img src="https://flog.pravda.sk/data/flog/ffffuno/679707/img-201710PDn_orig.jpg" alt ="Dubak" >
-                     <div class="card-body">
-                        <p class="card-text">Hríb dubový</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-
-                            </div>
-                            <small class="text-muted">jedlá huba</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-
-                    <img src="https://lh3.googleusercontent.com/proxy/MVkvIpvsOsADN25fQD9bf0lHngFjrcP4wyjElPfqon3l6HdDn_s5mBgu-Wzi5riBvy0enVONj-10xdffuK67cNFJchSoCm5DPogr7vTmdMjSAjQZE7_Uex88TmoH8_b0Nl7A7e8duLoK-3Kygw" alt ="Muchotravka Cervena" >
-                      <div class="card-body">
-                        <p class="card-text">Muchotrávka Červená</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-
-                            </div>
-                            <small class="text-muted">jedovatá huba</small>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
+
     </div>
 </div>
+<?php } ?>
+
+
 </body>
 </html>
