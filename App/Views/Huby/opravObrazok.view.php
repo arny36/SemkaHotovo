@@ -11,6 +11,6 @@
         </div>
 
 
-        <button type="submit" class="btn btn-outline-success">Submit</button>
+        <button type="submit" class="btn btn-outline-success">Odoslať</button>
     </form>
 </div>

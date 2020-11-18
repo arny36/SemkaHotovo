@@ -26,14 +26,14 @@
 <body>
 
 
-<a href="?c=huby&a=pridaj" class="btn btn-dark">Pridaj</a>
+<a href="?c=huby&a=pridaj" class="btn btn-dark">Pridaj položku</a>
 
 
 <div class="container">
 
     <?php /** @var \App\Models\HubyObsah[] $data */
     foreach ($data as $hubyObsah) { ?>
-        <a href="?c=huby&a=vymaz&id=<?= $hubyObsah->getId() ?>"  class="btn btn-danger">Vymaž </a>
+        <a href="?c=huby&a=vymaz&id=<?= $hubyObsah->getId() ?>"  class="btn btn-danger">X</a>
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
                 <img src= <?= $hubyObsah->getObrazok() ?> alt ="Bedla" >
@@ -51,7 +51,7 @@
 
                         <small class="text-muted"><?= $hubyObsah->getPopis() ?></small>
 
-                        <a href="?c=huby&a=opravText&id=<?= $hubyObsah->getId() ?>" class="btn btn-link">Edit</a>
+                        <a href="?c=huby&a=opravText&id=<?= $hubyObsah->getId() ?>" class="btn btn-link">Uprav Popis</a>
 
                     </div>
 
