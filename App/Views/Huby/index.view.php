@@ -51,7 +51,10 @@
 
                         <small class="text-muted"><?= $hubyObsah->getPopis() ?></small>
 
+                        <a href="?c=huby&a=opravText&id=<?= $hubyObsah->getId() ?>" class="btn btn-link">Edit</a>
+
                     </div>
+
                 </div>
             </div>
         </div>

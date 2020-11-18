@@ -46,14 +46,27 @@ class HubyController extends AControllerBase
 
     public function opravObrazok(){
 
-        if (isset($_POST['id'])) {
-
-
-            $art = hubyObsah::getOne($_POST['id']);
+        if (isset($_POST['obrazok'])) {
+            $art = hubyObsah::getOne($_GET['id']);
             $art->setObrazok($_POST['obrazok']);
             $art->save();
             $this->redirectToIndex();
+        } else {
+            $art = hubyObsah::getOne($_GET['id']);
+        }
 
+        return [];
+
+    }
+    public function opravText(){
+
+        if (isset($_POST['popis'])) {
+            $art = hubyObsah::getOne($_GET['id']);
+            $art->setPopis($_POST['popis']);
+            $art->save();
+            $this->redirectToIndex();
+        } else {
+            $art = hubyObsah::getOne($_GET['id']);
         }
 
         return [];
