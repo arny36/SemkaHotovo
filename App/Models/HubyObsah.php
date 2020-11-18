@@ -12,7 +12,7 @@ class HubyObsah extends Model
     protected $popis;
     protected $obrazok;
     /**
-     * Article constructor.
+     * HubyObsah constructor.
      * @param $id
      * @param $nazov
      * @param $jedlost;
