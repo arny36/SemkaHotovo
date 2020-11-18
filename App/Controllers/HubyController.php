@@ -72,8 +72,12 @@ class HubyController extends AControllerBase
 
         if (isset($_POST['obrazok'])) {
             $art = hubyObsah::getOne($_GET['id']);
-            $art->setObrazok($_POST['obrazok']);
-            $art->save();
+
+            if (strlen($_POST['obrazok']) > 5) {
+
+                $art->setObrazok($_POST['obrazok']);
+                $art->save();
+            }
             $this->redirectToIndex();
         } else {
             $art = hubyObsah::getOne($_GET['id']);
@@ -86,8 +90,10 @@ class HubyController extends AControllerBase
 
         if (isset($_POST['popis'])) {
             $art = hubyObsah::getOne($_GET['id']);
-            $art->setPopis($_POST['popis']);
-            $art->save();
+            if (strlen($_POST['popis']) > 40) {
+                $art->setPopis($_POST['popis']);
+                $art->save();
+            }
             $this->redirectToIndex();
         } else {
             $art = hubyObsah::getOne($_GET['id']);
