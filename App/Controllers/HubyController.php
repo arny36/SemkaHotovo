@@ -27,13 +27,37 @@ class HubyController extends AControllerBase
 
 
         $art = new HubyObsah($_POST['nazov'], $_POST['jedlost'], $_POST['popis'], $_POST['obrazok']);
-        $art->save();
-
+        if ($this->kontrola($_POST['nazov'], $_POST['jedlost'], $_POST['popis'], $_POST['obrazok'])) {
+            $art->save();
+        }
         $this->redirectToIndex();
         return [];
         }
 
     }
+
+    public function kontrola($nazov,$jedlost,$popis,$obrazok) {
+        if (strlen($nazov) < 5) {
+            return false;
+        } else {
+            if ($jedlost == null) {
+                return false;
+            } else {
+                if (strlen($popis) < 40) {
+                    return false;
+
+                } else {
+                    if (strlen($obrazok) > 0 ){
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
+
+    }
+
 
     public function vymaz() {
         if (isset($_GET['id'])) {
