@@ -19,7 +19,7 @@ class HubyObsah extends Model
      * @param $popis;
      * @param $obrazok;
      */
-    public function __construct($nazov = "", $jedlost = "", $popis = "", $obrazok= "")
+    public function __construct($nazov = "", $jedlost = 0, $popis = "", $obrazok= "")
     {
 
         $this->nazov = $nazov;

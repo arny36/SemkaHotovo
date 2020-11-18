@@ -28,10 +28,10 @@ include "mapa.css";
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="main.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="App/Views/Huby/index.view.php">Galéria</a>
+                <a class="nav-link" href="/../Semka%20vamz/?c=huby">Galéria</a>
 
             </li>
             <li class="nav-item active">

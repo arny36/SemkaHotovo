@@ -1,9 +1,8 @@
-
 <style>
-<?php
-include "galeria.css"
+    <?php
+    include "galeria.css"
 
-?>
+    ?>
 </style>
 
 
@@ -12,76 +11,54 @@ include "galeria.css"
     <meta charset="UTF-8">
     <title>GaleriaHubariNaCestach</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="galeria.css">
     <!-- jQuery and JS bundle w/ Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
 
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="#">
-
-        <img  src="https://library.kissclipart.com/20180831/tsw/kissclipart-alice-in-wonderland-mushroom-png-clipart-mushroom-6e2cbc53e77f8370.jpg" alt="Huba">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link " href="../../../index.php">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="index.view.php">Galéria</a>
-
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../../../mapa.php" > Mapa pre Hubárov</a>
-            </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
 
 <a href="?c=huby&a=pridaj" class="btn btn-dark">Pridaj</a>
 
 
-<?php /** @var \App\Models\HubyObsah[] $data */
-foreach ($data as $hubyObsah) { ?>
-<div class="album py-5 bg-light">
-    <div class="container">
+<div class="container">
 
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <img src= <?= $hubyObsah->getObrazok()  ?> alt ="Bedla" >
-                    <div class="card-body">
-                        <p class="card-text"><?= $hubyObsah->getNazov() ?></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                            </div>
-                            <small class="text-muted"><?=$hubyObsah->getJedlost()?></small>
-                            <div>
-                                <h1><?=$hubyObsah->getPopis()?></h1>
+    <?php /** @var \App\Models\HubyObsah[] $data */
+    foreach ($data as $hubyObsah) { ?>
+        <a href="?c=huby&a=vymaz&id=<?= $hubyObsah->getId() ?>"  class="btn btn-danger">Vymaž </a>
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src= <?= $hubyObsah->getObrazok() ?> alt ="Bedla" >
+                <a href="?c=huby&a=opravObrazok&id=<?= $hubyObsah->getId() ?>" class="btn btn-dark">Uprav obrázok</a>
+                <div class="card-body">
+                    <p1 class="card-text"><?= $hubyObsah->getNazov();
+                        echo "<br>";
+                        if ($hubyObsah->getJedlost() == 0) {
+                            echo "Nejedlá";
+                        } else {
+                            echo "Jedlá";
+                        }
+                        ?></p1>
+                    <div class="d-flex justify-content-between align-items-center">
 
-                            </div>
+                        <small class="text-muted"><?= $hubyObsah->getPopis() ?></small>
 
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-    </div>
+
+    <?php } ?>
 </div>
-<?php } ?>
-
-
 </body>
 </html>
+

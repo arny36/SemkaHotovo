@@ -1,3 +1,12 @@
+<style>
+<?php
+
+include "main.css";
+
+?></style>
+
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,17 +24,18 @@
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
     <a class="navbar-brand" href="#">
+        <img  src="https://library.kissclipart.com/20180831/tsw/kissclipart-alice-in-wonderland-mushroom-png-clipart-mushroom-6e2cbc53e77f8370.jpg" alt="Huba">
 
-         </a>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item ">
                 <a class="nav-link" href="/../Semka%20vamz/main.php">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="?c=huby">Galéria</a>
 
             </li>
